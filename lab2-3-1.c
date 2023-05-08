@@ -35,7 +35,9 @@ int main(void)
     while(1)
     {
         keypadnum = KeypadRead();
+        delay(50);
         LedControl(keypadnum);
+        delay(50);
     }
     return 0;
 }
