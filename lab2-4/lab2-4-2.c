@@ -51,13 +51,23 @@ void FndDisplay(int position, int num) {
 }
 int main() {
     int pos;
-    int data[6] = { 0, 1, 2, 3, 4, 5 }; // 출력할 문자 데이터
+    int data[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }; // 출력할 문자 데이터
     Init();
+    int count = 0;
     while(1) {
-        for( pos = 0; pos < 6; pos++ ) {
-            FndDisplay( pos, data[ pos ] );
-            delay(1); // WiringPi 라이브러리에서 정의된 delay() 함수, void delay( unsinged int howLong )
-        }
+        count++;
+        int a = (count/1000)%10;
+        int b = (count/100)%10;
+        int c = (count/10)%10;
+        int d = count%10;
+        FndDisplay( 0, d);
+        delay(1);
+        FndDisplay( 1, c);
+        delay(1);
+        FndDisplay( 2, b);
+        delay(1);
+        FndDisplay( 3, a);
+        delay(1);
     }
     return 0;
 }
